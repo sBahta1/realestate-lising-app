@@ -4,9 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="vendors/angular/angular.min.js"></script>
+    <script src="vendors/angular/angular-route.js"></script>
+    <script src="scripts/client.js"></script>
     <title>Document</title>
 </head>
-<body>
-    
+<body ng-app="myApp">
+    <header>
+        <h1>Welcome to Prime Real Eseate inc.</h1>
+            <p>-The Worlds Premier Real Estate Broker-</p>
+    </header>
+    <nav>
+
+    </nav>
+    <ng-view></ng-view>
 </body>
 </html>
