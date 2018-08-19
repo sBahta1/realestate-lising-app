@@ -9,7 +9,7 @@ myApp.controller('RentalController',['$http', function ($http) {
         
         $http({
             method: 'GET',
-            url: '/listings'
+            url: '/listings/rent'
         }).then(function (response) {
             console.log('RentController GET Listings', response.data);
             vm.rentalArr = response.data

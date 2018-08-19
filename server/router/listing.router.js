@@ -20,10 +20,10 @@ pool.on('error',(error)=>{
     console.log('Error Connecting to PostgreSQL', error);
 });
 
-//GET 
-router.get('/', function (req,res){
+//GET properties by 'rent' "type"
+router.get('/rent', function (req,res){
     console.log('In GET Route');
-    const query = 'SELECT * FROM "listings";';
+    const query = `SELECT * FROM "listings" WHERE "type" ilike 'rent'; `
     pool.query(query).then((results)=>{
         console.log(results);
         res.send(results.rows);
@@ -33,5 +33,17 @@ router.get('/', function (req,res){
     });
 })//end GET
 
+//GET properities by 'sale' "type"
+router.get('/sale', function (req,res){
+    console.log('In GET Route');
+    const query = `SELECT * FROM "listings" WHERE "type" ilike 'sale'; `
+    pool.query(query).then((results)=>{
+        console.log(results);
+        res.send(results.rows);
+    }).catch((error)=>{
+        console.log('Error getting listings', error);
+        res.sendStatus(500);
+    });
+})//end GET
 //Exports Router to Serverjs
 module.exports = router;
