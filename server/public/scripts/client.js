@@ -1,7 +1,7 @@
 const myApp = angular.module('myApp', ['ngRoute']);
 
 //Angular view routes configuration
-app.config(function($routeProvider){
+myApp.config(function($routeProvider){
     $routeProvider.when('/',{
         templateUrl: 'views/home.html',
         controller: 'HomeController as hc'

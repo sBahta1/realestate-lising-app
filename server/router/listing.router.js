@@ -21,7 +21,17 @@ pool.on('error',(error)=>{
 });
 
 //GET 
-
+router.get('/', function (req,res){
+    console.log('In GET Route');
+    const query = 'SELECT * FROM "listings";';
+    pool.query(query).then((results)=>{
+        console.log(results);
+        res.send(results.rows);
+    }).catch((error)=>{
+        console.log('Error getting listings', error);
+        res.sendStatus(500);
+    });
+})//end GET
 
 //Exports Router to Serverjs
 module.exports = router;

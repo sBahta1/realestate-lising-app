@@ -7,6 +7,9 @@
     <script src="vendors/angular/angular.min.js"></script>
     <script src="vendors/angular/angular-route.js"></script>
     <script src="scripts/client.js"></script>
+    <script src="scripts/controllers/rental.controller.js"></script>
+    <script src="scripts/controllers/home.controller.js"></script>
+    <script src="scripts/controllers/sale.controller.js"></script>
     <title>Document</title>
 </head>
 <body ng-app="myApp">
@@ -15,7 +18,9 @@
             <p>-The Worlds Premier Real Estate Broker-</p>
     </header>
     <nav>
-
+        <li><a href="#!/">Home</a></li>
+        <li><a href="#!/sales">For Sale</a></li>
+        <li><a href="#!/rentals">For Rent</a></li>
     </nav>
     <ng-view></ng-view>
 </body>

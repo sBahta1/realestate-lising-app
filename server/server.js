@@ -6,7 +6,6 @@ const bodyParser = require('body-parser');
 const listingsRouter = require('./router/listing.router.js');
 
 //configuration for bodyparser
-app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 //setup for routes
 app.use('/listings', listingsRouter)
