@@ -4,10 +4,10 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../modules/pool');
 
-//GET properties by 'rent' "type"
-router.get('/rent', function (req, res) {
+//GET properities by 'sale' "type"
+router.get('/sale', function (req, res) {
     console.log('In GET Route');
-    const query = `SELECT * FROM "listings" WHERE "type" ilike 'rent'; `;
+    const query = `SELECT * FROM "listings" WHERE "type" ilike 'sale';`;
     pool.query(query).then((results) => {
         console.log(results);
         res.send(results.rows);
