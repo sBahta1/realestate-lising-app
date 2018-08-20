@@ -3,9 +3,9 @@
         <div class="card col-md-3" ng-repeat="card in rc.rentalArr">
             <img class="card-img-top" ng-src="images/{{card.image_path}}">
             <div class="card-body">
-                <li>{{card.city}}</li>
-                <li>{{card.sqft}}</li>
-                <li>{{card.cost}}</li>
+                <li>Location: {{card.city}}</li>
+                <li>{{card.sqft}}<sub>sqft.</sub></li>
+                <li>${{card.cost}}</li>
                 <button ng-click="rc.deleteListing(card.id)" class="btn-danger">X</button>
             </div>
         </div>

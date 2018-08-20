@@ -38,7 +38,7 @@ router.post('/home', (req, res) => {
 //GET properties by 'rent' "type"
 router.get('/rent', function (req, res) {
     console.log('In GET Route');
-    const query = `SELECT * FROM "listings" WHERE "type" ilike 'rent'; `
+    const query = `SELECT * FROM "listings" WHERE "type" ilike 'rent'; `;
     pool.query(query).then((results) => {
         console.log(results);
         res.send(results.rows);
@@ -46,12 +46,12 @@ router.get('/rent', function (req, res) {
         console.log('Error getting listings', error);
         res.sendStatus(500);
     });
-})//end GET
+});//end GET
 
 //GET properities by 'sale' "type"
 router.get('/sale', function (req, res) {
     console.log('In GET Route');
-    const query = `SELECT * FROM "listings" WHERE "type" ilike 'sale'; `
+    const query = `SELECT * FROM "listings" WHERE "type" ilike 'sale';`;
     pool.query(query).then((results) => {
         console.log(results);
         res.send(results.rows);
@@ -59,7 +59,7 @@ router.get('/sale', function (req, res) {
         console.log('Error getting listings', error);
         res.sendStatus(500);
     });
-})//end GET
+});//end GET
 
 //Delete Route: TARGETS LISTING BY SERIALLY GENERATED DB ID
 router.delete('/:id', function (req, res) {
@@ -72,7 +72,7 @@ router.delete('/:id', function (req, res) {
         console.log(error);
         res.sendStatus(500);
     });
-})
+});
 
 //Exports Router to Serverjs
 module.exports = router;

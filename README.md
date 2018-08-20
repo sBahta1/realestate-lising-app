@@ -1,4 +1,6 @@
 # realestate-lising-app
+Note: This project in its current state is nominally functional. It meets base requirements but is not a finished product.
+
 
 Data Base table:
 
