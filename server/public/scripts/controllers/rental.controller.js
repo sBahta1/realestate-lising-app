@@ -6,16 +6,15 @@ myApp.controller('RentalController', ['$http', function ($http) {
 
     function getRentalList() {
         console.log('In getRentalList');
-
         $http({
             method: 'GET',
             url: '/listings/rent' //untill individual router made
         }).then(function (response) {
             console.log('RentController GET Listings', response.data);
-            vm.rentalArr = response.data
+            vm.rentalArr = response.data;
         }).catch((error) => {
             console.log('Error in getRentalList', error);
-        })
+        });
     }
 
     vm.deleteListing = function (id) {
@@ -28,6 +27,6 @@ myApp.controller('RentalController', ['$http', function ($http) {
             getSaleList();
         }).catch(function (error) {
             console.log('Could not delete', error);
-        })
-    }
+        });
+    };
 }]);//end Rentcontroller

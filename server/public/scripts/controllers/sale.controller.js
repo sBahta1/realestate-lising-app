@@ -12,10 +12,10 @@ myApp.controller('SaleController', function ($http) {
             url: '/listings/sale' //untill individual router made
         }).then(function (response) {
             console.log('SaleController GET Listings', response.data);
-            vm.saleArr = response.data
+            vm.saleArr = response.data;
         }).catch((error) => {
             console.log('Error in getRentalList', error);
-        })
+        });
     }
     vm.deleteListing = function (id) {
         console.log('in deleteListing', id);
@@ -27,7 +27,7 @@ myApp.controller('SaleController', function ($http) {
             getSaleList();
         }).catch(function (error) {
             console.log('Could not delete', error);
-        })
-    }
+        });
+    };
 
-})//end Sale Controller
+});//end Sale Controller

@@ -10,7 +10,7 @@ const config = {
     port: 5432,
     max: 10,
     idleTimeoutMillis: 10000
-}
+};
 const pool = new Pool(config);
 //connections to Postgresql
 pool.on('connect', () => {

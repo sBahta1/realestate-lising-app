@@ -14,4 +14,4 @@ myApp.config(function($routeProvider){
     }).otherwise({
         template:'<h1>Error 404 page not found</h1>'
     });
-})//end config
+});//end config

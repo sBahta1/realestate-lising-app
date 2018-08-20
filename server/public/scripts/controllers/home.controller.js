@@ -9,7 +9,7 @@ myApp.controller('HomeController', function ($http) {
             type: vm.typeIn,
             city: vm.cityIn,
             image_path: vm.imageIn
-        }
+        };
         console.log(newListing);
 
         $http({
@@ -22,5 +22,5 @@ myApp.controller('HomeController', function ($http) {
             alert('Unable to add your listing', error);
             console.log('Error', error);
         });
-    }
+    };
 });//end HomeController
