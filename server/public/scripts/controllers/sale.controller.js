@@ -30,5 +30,5 @@ myApp.controller('SaleController', function ($http) {
         })
     }
 
-
+    
 })//end Sale Controller

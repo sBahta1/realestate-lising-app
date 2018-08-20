@@ -17,4 +17,17 @@ myApp.controller('RentalController', ['$http', function ($http) {
             console.log('Error in getRentalList', error);
         })
     }
+
+    vm.deleteListing = function (id) {
+        console.log('in deleteListing', id);
+        $http({
+            method: 'DELETE',
+            url: '/listings/' + id
+        }).then(function (response) {
+            console.log('listing deleted', response.data);
+            getSaleList();
+        }).catch(function (error) {
+            console.log('Could not delete', error);
+        })
+    }
 }]);//end Rentcontroller

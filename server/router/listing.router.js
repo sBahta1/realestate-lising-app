@@ -19,6 +19,21 @@ pool.on('connect', () => {
 pool.on('error', (error) => {
     console.log('Error Connecting to PostgreSQL', error);
 });
+//Post route for new listings
+router.post('/home', (req, res) => {
+    const newListing = req.body;
+    const query = `INSERT INTO "listings" ("cost", "sqft", "type", "city", "image_path")
+                   VALUES ($1, $2, $3, $4, $5);`;
+    pool.query(query, [newListing.cost, newListing.sqft, newListing.type, newListing.city, newListing.image_path])
+.then(() => {
+    res.sendStatus(200);
+}).catch((error) => {
+    console.log('Error POSTing New Listing', error);
+    res.sendStatus(500);
+    });
+});
+
+
 
 //GET properties by 'rent' "type"
 router.get('/rent', function (req, res) {
