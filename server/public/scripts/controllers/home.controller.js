@@ -17,7 +17,7 @@ myApp.controller('HomeController', function($http){
     
        $http({
            method:'POST',
-           url:'/listings/home',
+           url:'/listings/home',//untill individual router made
            data: newListing
        }).then(function(respoonse){
            console.log('New Listing Added');

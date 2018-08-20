@@ -7,7 +7,13 @@
 - [x]  Create basic file/folder structure
 - [x]  Import vendors files
 - [x]  Create data base in postgresql/ import listings data to DB
-- [ ]  Build out the html fame work
-- [ ]  Add node/express 
-- [ ]  Create view files 
-- [ ]  Make BD connections
+- [x]  Build out the html fame work
+- [x]  Add node/express 
+- [x]  Create view files 
+- [x]  Make BD connections
+- [ ]  Make Readme
+- [ ]  Finish Card formatting
+- [ ]  Add Dropdown for image input
+- [ ]  Add ng-hide to home view new listings form
+- [ ]  Add sort functionality by price or size
+- [ ]  Make individual routers
