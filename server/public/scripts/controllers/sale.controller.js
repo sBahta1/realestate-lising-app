@@ -9,7 +9,7 @@ myApp.controller('SaleController', function ($http) {
         console.log('In getSaleList');
         $http({
             method: 'GET',
-            url: '/listings/sale'
+            url: '/listings/sale' //untill individual router made
         }).then(function (response) {
             console.log('SaleController GET Listings', response.data);
             vm.saleArr = response.data
@@ -21,7 +21,7 @@ myApp.controller('SaleController', function ($http) {
         console.log('in deleteListing', id);
         $http({
             method: 'DELETE',
-            url: '/listings/' + id
+            url: '/listings/' + id //untill individual router made
         }).then(function (response) {
             console.log('listing deleted', response.data);
             getSaleList();
@@ -30,5 +30,4 @@ myApp.controller('SaleController', function ($http) {
         })
     }
 
-    
 })//end Sale Controller

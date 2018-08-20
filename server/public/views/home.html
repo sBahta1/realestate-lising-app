@@ -1,16 +1,16 @@
 <h1>Home view</h1>
 
 <form ng-submit="hc.addNewListing()">
-        <select id="listtype" ng-model="hc.typeIn">
-                <option value="">---Please select---</option> <!-- not selected / blank option -->
-                <option value="rent">Property for Rent</option> <!-- interpolation -->
-                <option value="sale">Property for Sale</option>
-        </select>
+    <select id="listtype" ng-model="hc.typeIn">
+        <option value="">---Please select---</option> <!-- not selected / blank option -->
+        <option value="rent">Property for Rent</option> <!-- interpolation -->
+        <option value="sale">Property for Sale</option>
+    </select>
     <input type="text" placeholder="Location" ng-model="hc.cityIn">
-    <input type="number" placeholder="List Price" ng-model="hc.costIn" >
+    <input type="number" placeholder="List Price" ng-model="hc.costIn">
     <input type="number" placeholder="Property size" ng-model="hc.sqftIn">
     <input type="text" placeholder="Image Url" ng-model="hc.imageIn">
-<button>Submit</button>
+    <button>Submit</button>
 </form>
 
 

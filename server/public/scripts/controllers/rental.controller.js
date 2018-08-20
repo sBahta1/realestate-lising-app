@@ -9,7 +9,7 @@ myApp.controller('RentalController', ['$http', function ($http) {
 
         $http({
             method: 'GET',
-            url: '/listings/rent'
+            url: '/listings/rent' //untill individual router made
         }).then(function (response) {
             console.log('RentController GET Listings', response.data);
             vm.rentalArr = response.data
@@ -22,7 +22,7 @@ myApp.controller('RentalController', ['$http', function ($http) {
         console.log('in deleteListing', id);
         $http({
             method: 'DELETE',
-            url: '/listings/' + id
+            url: '/listings/' + id //untill individual router made
         }).then(function (response) {
             console.log('listing deleted', response.data);
             getSaleList();
