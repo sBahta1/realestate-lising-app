@@ -1,27 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="styles/styles.css" rel="stylesheet">
+    <link href="vendors/css/bootstrap.css" rel="stylesheet">
     <script src="vendors/angular/angular.min.js"></script>
     <script src="vendors/angular/angular-route.js"></script>
     <script src="scripts/client.js"></script>
     <script src="scripts/controllers/rental.controller.js"></script>
     <script src="scripts/controllers/home.controller.js"></script>
     <script src="scripts/controllers/sale.controller.js"></script>
+    <script src="vendors/js/bootstrap.js"></script>
     <title>Document</title>
 </head>
+
 <body ng-app="myApp">
     <header>
         <h1>Welcome to Prime Real Eseate inc.</h1>
-            <p>-The Worlds Premier Real Estate Broker-</p>
+        <p>-The Worlds Premier Real Estate Broker-</p>
     </header>
-    <nav>
-        <li><a href="#!/">Home</a></li>
-        <li><a href="#!/sales">For Sale</a></li>
-        <li><a href="#!/rentals">For Rent</a></li>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="#!/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#!/sales">For Sale</a></li>
+                <li class="nav-item"><a class="nav-link" href="#!/rentals">For Rent</a></li>
+            </ul>
+        </div>
     </nav>
     <ng-view></ng-view>
+
 </body>
+
 </html>

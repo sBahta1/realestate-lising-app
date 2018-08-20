@@ -1,4 +1,4 @@
-myApp.controller('RentalController',['$http', function ($http) {
+myApp.controller('RentalController', ['$http', function ($http) {
     vm = this;
     vm.rentalArr = [];
 
@@ -6,7 +6,7 @@ myApp.controller('RentalController',['$http', function ($http) {
 
     function getRentalList() {
         console.log('In getRentalList');
-        
+
         $http({
             method: 'GET',
             url: '/listings/rent'

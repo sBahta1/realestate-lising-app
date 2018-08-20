@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+}
+
+.navbar{
+    border: 1px solid black;
+}
+
+.card{
+    display: inline;
+    border: 1px solid black;
+    margin: 10px;
+}
+.saleContainer{
+    display: inline;
+}

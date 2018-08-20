@@ -13,37 +13,51 @@ const config = {
 }
 const pool = new Pool(config);
 //connections to Postgresql
-pool.on('connect', ()=>{
-    console.log('PostgreSQL Connected');    
+pool.on('connect', () => {
+    console.log('PostgreSQL Connected');
 });
-pool.on('error',(error)=>{
+pool.on('error', (error) => {
     console.log('Error Connecting to PostgreSQL', error);
 });
 
 //GET properties by 'rent' "type"
-router.get('/rent', function (req,res){
+router.get('/rent', function (req, res) {
     console.log('In GET Route');
     const query = `SELECT * FROM "listings" WHERE "type" ilike 'rent'; `
-    pool.query(query).then((results)=>{
+    pool.query(query).then((results) => {
         console.log(results);
         res.send(results.rows);
-    }).catch((error)=>{
+    }).catch((error) => {
         console.log('Error getting listings', error);
         res.sendStatus(500);
     });
 })//end GET
 
 //GET properities by 'sale' "type"
-router.get('/sale', function (req,res){
+router.get('/sale', function (req, res) {
     console.log('In GET Route');
     const query = `SELECT * FROM "listings" WHERE "type" ilike 'sale'; `
-    pool.query(query).then((results)=>{
+    pool.query(query).then((results) => {
         console.log(results);
         res.send(results.rows);
-    }).catch((error)=>{
+    }).catch((error) => {
         console.log('Error getting listings', error);
         res.sendStatus(500);
     });
 })//end GET
+
+//Delete Route: TARGETS LISTING BY SERIALLY GENERATED DB ID
+router.delete('/:id', function (req, res) {
+    const listingId = req.params.id;
+    const query = `DELETE FROM "listings" WHERE "id" = $1;`;
+    pool.query(query, [listingId]).then((result) => {
+        console.log(result);
+        res.sendStatus(200);
+    }).catch((error) => {
+        console.log(error);
+        res.sendStatus(500);
+    });
+})
+
 //Exports Router to Serverjs
 module.exports = router;
