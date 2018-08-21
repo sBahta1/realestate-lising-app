@@ -1,5 +1,7 @@
-const pg = require('pg');
 
+
+const pg = require('pg');
+const Pool = pg.Pool;
 const config = {
     database: 'real_estate',
     host: 'localhost',

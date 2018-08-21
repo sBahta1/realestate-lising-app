@@ -8,7 +8,7 @@ myApp.controller('RentalController', ['$http', function ($http) {
         console.log('In getRentalList');
         $http({
             method: 'GET',
-            url: '/listings/rent' //untill individual router made
+            url: '/rent/rent' //untill individual router made
         }).then(function (response) {
             console.log('RentController GET Listings', response.data);
             vm.rentalArr = response.data;

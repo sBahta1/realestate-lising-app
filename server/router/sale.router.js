@@ -2,7 +2,7 @@
 
 const express = require('express');
 const router = express.Router();
-const pool = require('../modules/pool');
+const pool = require('../modules/pool.js');
 
 //GET properities by 'sale' "type"
 router.get('/sale', function (req, res) {

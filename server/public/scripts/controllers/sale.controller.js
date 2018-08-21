@@ -9,7 +9,7 @@ myApp.controller('SaleController', function ($http) {
         console.log('In getSaleList');
         $http({
             method: 'GET',
-            url: '/listings/sale' //untill individual router made
+            url: '/sale/sale' //untill individual router made
         }).then(function (response) {
             console.log('SaleController GET Listings', response.data);
             vm.saleArr = response.data;
